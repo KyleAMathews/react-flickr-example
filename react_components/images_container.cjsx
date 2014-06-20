@@ -6,10 +6,10 @@ module.exports = React.createClass
   render: ->
     images = []
     for img in @props.photos
-      images.push <FlickrImage key={img.id} src={img.medium} />
+      images.push <FlickrImage key={img.id} data={img} />
 
      return (
-       <div>
+       <div className="image-container">
          {images}
        </div>
      )

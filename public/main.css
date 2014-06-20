@@ -556,115 +556,33 @@ small {
 *, *:before, *:after {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  outline: none; }
 
 body {
-  max-width: 32em;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 1.5rem;
+  background: black;
   font-family: Georgia, sans-serif;
   font-weight: 400;
   color: #4c4c4c;
   text-rendering: optimizeLegibility;
   word-wrap: break; }
-  body:after {
-    content: " ";
-    display: block;
-    clear: both; }
-
-p, li {
-  word-wrap: break-word; }
-
-p {
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  -webkit-hyphens: auto;
-  hyphens: auto;
-  margin-top: 0px;
-  margin-top: 0rem;
-  margin-bottom: 26px;
-  margin-bottom: 1.3rem; }
 
 a {
-  text-decoration: none;
-  color: #4472B9; }
-  a:hover, a:focus {
-    text-decoration: underline;
-    color: inherit; }
+  text-decoration: none; }
 
 img {
-  max-width: 100%; }
-  img.float-left {
-    float: left;
-    margin-right: 0.325rem; }
+  margin: 0.325rem; }
 
-code {
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-  white-space: pre;
-  white-space: pre-wrap;
-  white-space: pre-line;
-  white-space: -pre-wrap;
-  white-space: -o-pre-wrap;
-  white-space: -moz-pre-wrap;
-  white-space: -hp-pre-wrap;
-  word-wrap: break-word;
-  background: #e5e5e5;
-  border: 1px solid #cccccc;
-  display: inline;
-  font-family: Inconsolata, monospace, serif;
-  font-size: 16px;
-  line-height: 20px;
-  max-width: 100%;
-  overflow: auto;
-  padding: 0 0.1625rem; }
-
-pre {
-  margin: 0;
-  margin-bottom: 1.3rem;
-  padding: 0; }
-  pre code {
-    background: none;
-    border: none;
-    display: inline-block;
-    overflow: initial;
-    padding: 1.3rem;
-    white-space: inherit;
-    word-wrap: inherit; }
-
-blockquote {
-  border-left-width: 7px;
-  border-left-width: 0.325rem;
-  border-left-style: solid;
-  padding-left: 20px;
-  padding-left: 0.975rem;
-  border-color: #cccccc;
-  margin: 0;
-  margin-left: 0.65rem; }
-  @media (max-width: 500px) {
-    blockquote {
-      margin-left: -15.5px; } }
-  blockquote h1, blockquote h2, blockquote h3, blockquote h4, blockquote h5, blockquote h6 {
-    margin-top: 0; }
-
-ul, ol {
-  padding: 0 0 0 1.95rem;
-  margin: 1.3rem 0; }
-  ul ol, ul ul, ol ol, ol ul {
-    margin: 0; }
-  ul li, ol li {
-    margin-bottom: 0.65rem; }
-
-hr {
-  margin-top: 26px;
-  margin-top: 1.3rem;
-  margin-bottom: 26px;
-  margin-bottom: 1.3rem;
-  background: #cccccc;
-  border: none;
-  clear: both;
-  float: none;
-  height: 1px;
+.search-bar {
+  background: rgba(229, 229, 229, 0.75);
+  height: 2.6rem;
+  position: fixed;
+  top: 0;
   width: 100%; }
+  .search-bar__input {
+    border: 0;
+    margin: 0.65rem;
+    padding: 2px; }
+
+.image-container {
+  margin-top: 3.25rem; }

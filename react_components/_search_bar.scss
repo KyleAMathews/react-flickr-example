@@ -1,0 +1,12 @@
+.search-bar {
+  background: gray(90%, 0.75);
+  height: rhythm(2);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  &__input {
+    border: 0;
+    margin: rhythm(0.5);
+    padding: 2px;
+  }
+}

@@ -10,10 +10,12 @@ module.exports = (query, options = {}, callback) ->
     method: 'flickr.photos.search'
     api_key: FLICKR_KEY
     tags: tags
-    tag_mode: 'any'
-    per_page: 10
+    tag_mode: 'all'
+    per_page: 100
     page: 1
     format: 'json'
+    media: 'photos'
+    sort: 'interestingness-desc'
     nojsoncallback: 1
 
   combinedOptions = _.extend defaultOptions, options

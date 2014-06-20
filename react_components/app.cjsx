@@ -6,13 +6,17 @@ flickrSearch = require '../lib/flickr_search'
 
 module.exports = React.createClass
   displayName: "App"
+
   getInitialState: ->
     photos: []
+
   handleSearch: (query) ->
     console.log query
+    @setState photos: []
     flickrSearch(query, null, (err, photos) =>
       @setState photos: photos
     )
+
   render: ->
      return (
        <div>
@@ -20,4 +24,3 @@ module.exports = React.createClass
          <ImagesContainer photos={@state.photos} />
        </div>
      )
-

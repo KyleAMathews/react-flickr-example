@@ -6,11 +6,13 @@ module.exports = React.createClass
     query = @refs.search.getDOMNode().value
     if query isnt ""
       @props.onSearch(query)
+
   componentDidMount: ->
     @refs.search.getDOMNode().focus()
+
   render: ->
-    <div>
+    <div className="search-bar">
       <form onSubmit={@handleSubmit}>
-        <input ref="search" type="search" />
+        <input className="search-bar__input" ref="search" type="search" />
       </form>
     </div>

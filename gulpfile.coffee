@@ -24,7 +24,7 @@ gulp.task('scripts', ->
 
 # CSS
 gulp.task('css', ->
-  gulp.src(['styles/*.sass', 'styles/*.scss'])
+  gulp.src(['styles/main.sass'])
     .pipe($.compass({
       css: 'public/'
       sass: 'styles'
@@ -55,7 +55,7 @@ gulp.task 'default', ->
 gulp.task 'build', ['scripts', 'css']
 
 gulp.task 'watch', ['css', 'connect'], ->
-  gulp.watch(['styles/*'], ['css'])
+  gulp.watch(['styles/*', 'react_components/**/*.scss'], ['css'])
 
   # https://github.com/gulpjs/gulp/blob/master/docs/recipes/fast-browserify-builds-with-watchify.md
   bundler = watchify('./client.coffee', {

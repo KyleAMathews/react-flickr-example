@@ -559,9 +559,12 @@ small {
   box-sizing: border-box;
   outline: none; }
 
+html {
+  overflow-y: scroll; }
+
 body {
   background: black;
-  font-family: Georgia, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
   color: #4c4c4c;
   text-rendering: optimizeLegibility;
@@ -581,8 +584,60 @@ img {
   width: 100%; }
   .search-bar__input {
     border: 0;
+    float: left;
     margin: 0.65rem;
     padding: 2px; }
 
+.react-spinner {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  top: 50%;
+  left: 96%; }
+
+.react-spinner_bar {
+  -webkit-animation: react-spinner_spin 1.2s linear infinite;
+  -moz-animation: react-spinner_spin 1.2s linear infinite;
+  animation: react-spinner_spin 1.2s linear infinite;
+  border-radius: 5px;
+  background-color: white;
+  position: absolute;
+  width: 6.5px;
+  height: 2.5px;
+  top: -1.25px;
+  left: -3.25px; }
+
+@keyframes "react-spinner_spin" {
+  0% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0.15; } }
+@-moz-keyframes react-spinner_spin {
+  0% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0.15; } }
+@-webkit-keyframes "react-spinner_spin" {
+  0% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0.15; } }
 .image-container {
-  margin-top: 3.25rem; }
+  margin-top: 2.925rem; }
+
+.image-enter {
+  opacity: 0.01;
+  transition: opacity 2s ease-in; }
+
+.image-enter.image-enter-active {
+  opacity: 1; }
+
+.image-leave {
+  opacity: 1;
+  transition: opacity .5s ease-in; }
+
+.image-leave.image-leave-active {
+  opacity: 0.01; }

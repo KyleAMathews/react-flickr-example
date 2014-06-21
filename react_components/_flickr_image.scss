@@ -1,0 +1,17 @@
+.image-enter {
+  opacity: 0.01;
+  transition: opacity 2s ease-in;
+}
+
+.image-enter.image-enter-active {
+  opacity: 1;
+}
+
+.image-leave {
+  opacity: 1;
+  transition: opacity .5s ease-in;
+}
+
+.image-leave.image-leave-active {
+  opacity: 0.01;
+}

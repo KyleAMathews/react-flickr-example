@@ -22085,7 +22085,11 @@ module.exports = React.createClass({
   componentDidMount: function() {
     this.updateDimensions();
     window.addEventListener("resize", this.updateDimensions);
-    return window.addEventListener("scroll", this.nextPage);
+    window.addEventListener("scroll", this.nextPage);
+    annyang.addCommands({
+      "show me *term": this.handleSearch
+    });
+    return annyang.start();
   },
   handleSearch: function(query) {
     return this.setState({
@@ -22114,6 +22118,7 @@ module.exports = React.createClass({
   render: function() {
     return React.DOM.div(null, SearchBar({
       "onSearch": this.handleSearch,
+      "query": this.state.query,
       "loading": this.state.loading
     }), ImagesContainer({
       "imgsLoaded": this.imageLoaded,
@@ -22268,6 +22273,7 @@ module.exports = React.createClass({
     }, React.DOM.form({
       "onSubmit": this.handleSubmit
     }, React.DOM.input({
+      "value": this.props.query,
       "placeholder": "Search Flickr",
       "className": "search-bar__input",
       "ref": "search",

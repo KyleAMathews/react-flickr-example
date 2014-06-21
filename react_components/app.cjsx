@@ -1,8 +1,7 @@
 React = require 'react'
+_ = require 'underscore'
 SearchBar = require './search_bar'
 ImagesContainer = require './images_container'
-_ = require 'underscore'
-$ = require 'jquery'
 flickrSearch = require '../lib/flickr_search'
 
 module.exports = React.createClass

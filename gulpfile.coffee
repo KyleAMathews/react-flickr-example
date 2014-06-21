@@ -7,19 +7,21 @@ watchify = require('watchify')
 # Load plugins
 $ = require('gulp-load-plugins')()
 
+isProduction = process.env.NODE_ENV is "production"
+
 # React code
 gulp.task('scripts', ->
     return gulp.src('client.coffee', read: false)
         .pipe($.browserify({
             insertGlobals: true
-            extensions: '.cjsx'
-            transform: ['coffee-reactify', 'envify']
-            debug: true
+            extensions: ['.cjsx', 'coffee']
+            transform: 'coffee-reactify'
+            debug: !isProduction
         }))
+        .pipe($.if(isProduction, $.uglify()))
         .pipe($.rename('bundle.js'))
         .pipe(gulp.dest('public/'))
         .pipe($.size())
-        .pipe($.connect.reload())
 )
 
 # CSS
@@ -63,7 +65,7 @@ gulp.task 'watch', ['css', 'connect'], ->
   })
   bundler.transform('coffee-reactify')
   rebundle = ->
-    return bundler.bundle({debug: true})
+    return bundler.bundle({debug: !isProduction})
       .pipe(source('bundle.js'))
       .pipe(gulp.dest('./public'))
       .pipe($.connect.reload())

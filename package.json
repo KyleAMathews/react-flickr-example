@@ -19,9 +19,11 @@
     "gulp-browserify": "^0.5.0",
     "gulp-compass": "^1.1.9",
     "gulp-connect": "^2.0.5",
+    "gulp-if": "^1.2.1",
     "gulp-load-plugins": "^0.5.1",
     "gulp-rename": "^1.2.0",
     "gulp-size": "^0.4.0",
+    "gulp-uglify": "^0.3.1",
     "jest-cli": "^0.1.15",
     "open": "0.0.5",
     "reactify": "^0.13.1",
@@ -50,6 +52,7 @@
   "scripts": {
     "start": "NODE_ENV=production ./node_modules/.bin/coffee server.coffee",
     "build": "cult build",
+    "build-prod": "NODE_ENV=production cult build",
     "test": "jest"
   }
 }

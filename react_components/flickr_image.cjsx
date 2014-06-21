@@ -1,6 +1,5 @@
 React = require 'react'
 _ = require 'underscore'
-$ = require 'jquery'
 
 module.exports = React.createClass
   displayName: "FlickrImage"

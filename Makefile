@@ -1,6 +1,5 @@
 publish:
-	npm run build-prod
-	git checkout -b gh-pages
+	git checkout gh-pages
 	git checkout master -- public
 	cp public/* .
 	git add --all .

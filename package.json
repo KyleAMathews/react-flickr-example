@@ -52,7 +52,7 @@
   "scripts": {
     "start": "NODE_ENV=production ./node_modules/.bin/coffee server.coffee",
     "build": "cult build",
-    "build-prod": "NODE_ENV=production cult build",
+    "build-prod": "NODE_ENV=production cult watch",
     "test": "jest"
   }
 }

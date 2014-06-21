@@ -17,7 +17,7 @@ module.exports = React.createClass
 
     <div className="search-bar">
       <form onSubmit={@handleSubmit}>
-        <input value={@props.query} placeholder="Search Flickr" className="search-bar__input" ref="search" type="search" />
+        <input defaultValue={@props.query} placeholder="Search Flickr" className="search-bar__input" ref="search" type="search" />
       </form>
       {spinner}
     </div>

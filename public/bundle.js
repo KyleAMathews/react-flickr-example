@@ -22273,7 +22273,7 @@ module.exports = React.createClass({
     }, React.DOM.form({
       "onSubmit": this.handleSubmit
     }, React.DOM.input({
-      "value": this.props.query,
+      "defaultValue": this.props.query,
       "placeholder": "Search Flickr",
       "className": "search-bar__input",
       "ref": "search",

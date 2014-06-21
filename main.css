@@ -577,16 +577,17 @@ img {
   margin: 0.325rem; }
 
 .search-bar {
-  background: rgba(229, 229, 229, 0.75);
+  background: rgba(25, 25, 25, 0.45);
   height: 2.6rem;
   position: fixed;
   top: 0;
   width: 100%; }
   .search-bar__input {
+    background: rgba(255, 255, 255, 0.7);
     border: 0;
     float: left;
-    margin: 0.65rem;
-    padding: 2px; }
+    margin: 9px;
+    padding: 4px; }
 
 .react-spinner {
   position: relative;

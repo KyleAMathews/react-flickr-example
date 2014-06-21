@@ -22094,7 +22094,7 @@ module.exports = React.createClass({
   handleSearch: function(query) {
     return this.setState({
       photos: [],
-      query: query,
+      query: query.toLowerCase(),
       imgsLoaded: 0,
       page: 1
     }, function() {
@@ -22115,11 +22115,17 @@ module.exports = React.createClass({
       };
     })(this));
   },
+  handleChangeQuery: function(e) {
+    return this.setState({
+      query: e.target.value.toLowerCase()
+    });
+  },
   render: function() {
     return React.DOM.div(null, SearchBar({
       "onSearch": this.handleSearch,
       "query": this.state.query,
-      "loading": this.state.loading
+      "loading": this.state.loading,
+      "handleChange": this.handleChangeQuery
     }), ImagesContainer({
       "imgsLoaded": this.imageLoaded,
       "picWidth": this.state.picWidth,
@@ -22273,7 +22279,8 @@ module.exports = React.createClass({
     }, React.DOM.form({
       "onSubmit": this.handleSubmit
     }, React.DOM.input({
-      "defaultValue": this.props.query,
+      "onChange": this.props.handleChange,
+      "value": this.props.query,
       "placeholder": "Search Flickr",
       "className": "search-bar__input",
       "ref": "search",

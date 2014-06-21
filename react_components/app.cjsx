@@ -51,7 +51,7 @@ module.exports = React.createClass
   handleSearch: (query) ->
     @setState {
       photos: []
-      query: query
+      query: query.toLowerCase()
       imgsLoaded: 0
       page: 1
     }, -> @search()
@@ -62,6 +62,9 @@ module.exports = React.createClass
       @setState photos: @state.photos.concat photos
     )
 
+  handleChangeQuery: (e) ->
+    @setState query: e.target.value.toLowerCase()
+
   render: ->
      return (
        <div>
@@ -69,6 +72,7 @@ module.exports = React.createClass
            onSearch={@handleSearch}
            query={@state.query}
            loading={@state.loading}
+           handleChange={@handleChangeQuery}
          />
          <ImagesContainer
            imgsLoaded={@imageLoaded}

@@ -45,6 +45,9 @@ module.exports = React.createClass
     window.addEventListener("resize", @updateDimensions)
     window.addEventListener("scroll", @nextPage)
 
+    annyang.addCommands({"show me *term": @handleSearch})
+    annyang.start()
+
   handleSearch: (query) ->
     @setState {
       photos: []
@@ -64,6 +67,7 @@ module.exports = React.createClass
        <div>
          <SearchBar
            onSearch={@handleSearch}
+           query={@state.query}
            loading={@state.loading}
          />
          <ImagesContainer

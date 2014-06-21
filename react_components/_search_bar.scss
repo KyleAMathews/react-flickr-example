@@ -1,14 +1,15 @@
 .search-bar {
-  background: gray(90%, 0.75);
+  background: gray(10%, 0.45);
   height: rhythm(2);
   position: fixed;
   top: 0;
   width: 100%;
   &__input {
+    background: gray(100%, 0.7);
     border: 0;
     float: left;
-    margin: rhythm(0.5);
-    padding: 2px;
+    margin: 9px;
+    padding: 4px;
   }
 }
 
